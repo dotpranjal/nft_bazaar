@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { Menu, X } from 'lucide-react'
-import { ConnectButton, lightTheme } from "thirdweb/react"
+import { ConnectButton } from "thirdweb/react"
 import { client } from "@/app/client"
 
 

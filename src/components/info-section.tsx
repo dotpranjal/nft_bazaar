@@ -1,7 +1,6 @@
 "use client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import p1 from ".//assets/p1.jpg"
-import p2 from ".//assets/p2.jpg"
 import p3 from ".//assets/p3.jpg"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
