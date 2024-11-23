@@ -1,7 +1,9 @@
 "use client"
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Menu, X } from 'lucide-react'
+import { ConnectButton, lightTheme } from "thirdweb/react"
+import { client } from "@/app/client"
+
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -9,16 +11,20 @@ export function Navbar() {
   return (
     <nav className="border-b border-blue-200 py-4 sticky top-0 bg-white/80 backdrop-blur-sm z-10 text-gray-900">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold">CryptoArt Collective</div>
+        <div className="text-2xl font-bold">NFT Bazaar</div>
         <div className="hidden md:flex space-x-6 items-center">
           <a href="#about" className="hover:text-blue-600 transition-colors">About</a>
           <a href="#collection" className="hover:text-blue-600 transition-colors">Collection</a>
           <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
           <a href="#roadmap" className="hover:text-blue-600 transition-colors">Roadmap</a>
           <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
-          <Button variant="outline" className="border-blue-500 text-blue-600 hover:bg-blue-50">
-            Connect Wallet
-          </Button>
+          
+          <ConnectButton client={client} 
+            theme="light"
+            connectButton={{
+              label: "Connect Wallet",
+            }}
+            />
         </div>
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X /> : <Menu />}
@@ -32,9 +38,12 @@ export function Navbar() {
             <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
             <a href="#roadmap" className="hover:text-blue-600 transition-colors">Roadmap</a>
             <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
-            <Button variant="outline" className="border-blue-500 text-blue-600 hover:bg-blue-50">
-              Connect Wallet
-            </Button>
+            <ConnectButton client={client}
+            theme="light"
+            connectButton={{
+              label: "Connect Wallet",
+            }} 
+            />
           </div>
         </div>
       )}
